@@ -1,0 +1,17 @@
+<?php 
+	$linkedin_profile = $block->getCustomer()->getCustomAttribute('linkedin_profile');
+	$helper = $this->helper('RedboxDigital\LinkedinProfile\Helper\Data');
+	$mandatory = $helper->getOption();
+?>
+
+<fieldset class="fieldset linkedinprofile" data-container="change-linkedin-profile-url">
+    <legend class="legend"><span data-title="change-linkedin-profile-url"><?= $block->escapeHtml(__('Change Linkedin Profile URL')) ?></span></legend><br>
+    <div class="field linkedinprofile <?php echo $mandatory; ?>" data-container="change-linkedin-profile-url">
+	    <label for="linkedinprofile" class="label"><span><?php /* @escapeNotVerified */
+	            echo __('Linkedin Profile URL') ?></span></label>
+	    <div class="control">
+	        <input type="text" name="linkedin_profile" id="linkedin_profile" title="<?php /* @escapeNotVerified */
+	        echo __('Linkedin Profile URL') ?>"  data-input="change-linkedin-profile-url" class="input-text <?php echo $mandatory; ?> url validate-length maximum-length-250" value="<?php if($linkedin_profile){ echo $block->escapeHtml($linkedin_profile->getValue()); } ?>">
+	    </div>
+	</div>
+</fieldset>

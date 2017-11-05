@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2017 RedboxDigital. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="redboxdigital" translate="label" sortOrder="450">
+            <label>RedboxDigital</label>
+        </tab>
+        <section id="linkedinprofile" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Linkedin Profile</label>
+            <tab>redboxdigital</tab>
+            <resource>RedboxDigital_LinkedinProfile::linkedinprofile_configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                <label>General</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="options" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                   <label>Whether the field is</label>        
+                   <source_model>RedboxDigital\LinkedinProfile\Model\Config\Source\ListMode</source_model>
+                </field>
+            </group>            
+        </section>
+    </system>
+</config>
